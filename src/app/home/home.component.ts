@@ -8,19 +8,30 @@ import { RequestsService, Articles } from '../lib/requests.service';
 })
 export class HomeComponent implements OnInit {
   carouselArticles: Articles[];
+  homeArticles: Articles[];
   constructor(
     private requestsService: RequestsService
   ) { }
 
   ngOnInit() {
+    // GET SLIDER/CAROUSEL ARTICLES
     this.requestsService.getArticles({
       _sort: 'id', _order: 'desc', _start: 0, _end: 5
     }).subscribe(
       data => { 
         this.carouselArticles = data;
-        console.log(this.carouselArticles);
       }
     );
+
+    // GET ARTICLES HOME
+    this.requestsService.getArticles({
+      _sort: 'id', _order: 'desc', _start: 5, _limit: 6   
+    }).subscribe(
+      data => {
+        this.homeArticles = data;
+        console.log(data);
+      }
+    ); 
   }
 
 }

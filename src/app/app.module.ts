@@ -20,6 +20,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 // MAT
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { CardComponent } from './articles/card/card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     FooterComponent,
     HeaderComponent,
     SidenavComponent,
-    CarouselComponent
+    CarouselComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
