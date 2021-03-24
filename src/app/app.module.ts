@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,12 +17,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { CardComponent } from './articles/card/card.component';
 import { TruncatePipe } from './lib/pipes/truncate.pipe';
+import { NewsletterComponent } from './lib/newsletter/newsletter.component';
 
 // NGX BOOTS
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 // MAT
 import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +40,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     SidenavComponent,
     CarouselComponent,
     CardComponent,
-    TruncatePipe
+    TruncatePipe,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     BrowserAnimationsModule,
     MatSidenavModule,
     CarouselModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

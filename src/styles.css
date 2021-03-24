@@ -210,7 +210,8 @@ section{ width:100%;}
 
 
 input.ng-invalid.ng-touched {
-  background:#ff5c5c36
+  background:#ff5c5c36;
+  color: white;
 }
 
 .error-label {
