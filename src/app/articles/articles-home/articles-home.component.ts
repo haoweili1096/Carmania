@@ -10,6 +10,8 @@ import { delay } from 'rxjs/operators';
 export class ArticlesHomeComponent implements OnInit {
   articles: Articles[] = [];
   start = 0;
+  showSpinner = false;
+  articlesEnd = false;
   constructor(
     private requestsService: RequestsService
   ) { }
@@ -19,6 +21,7 @@ export class ArticlesHomeComponent implements OnInit {
   }
 
   getArticles() {
+    this.showSpinner = true;
     this.requestsService.getArticles({
       _sort: 'id', _order: 'desc', _limit: 6, _start: this.start
     }).pipe(
@@ -29,10 +32,18 @@ export class ArticlesHomeComponent implements OnInit {
         ...data
       ];
       this.start = this.start + 6;
+      this.handleNoMoreArticles(data);
+      this.showSpinner = false;
     })
   }
 
   onScroll() {
     this.getArticles();
+  }
+
+  handleNoMoreArticles(data: Articles[]) {
+    if(data.length === 0) {
+      this.articlesEnd = true;
+    }
   }
 }
