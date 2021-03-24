@@ -16,6 +16,8 @@ export class HeaderComponent implements OnInit {
     this.routes = this.navService.routes;
   }
 
-  
+  toggle() {
+    this.navService.toggleSidenav();
+  }  
 
 }
