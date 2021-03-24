@@ -14,13 +14,14 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './header/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselComponent } from './home/carousel/carousel.component';
+import { CardComponent } from './articles/card/card.component';
+import { TruncatePipe } from './lib/pipes/truncate.pipe';
 
 // NGX BOOTS
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 // MAT
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { CardComponent } from './articles/card/card.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CardComponent } from './articles/card/card.component';
     HeaderComponent,
     SidenavComponent,
     CarouselComponent,
-    CardComponent
+    CardComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
