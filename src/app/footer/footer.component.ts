@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavService, Nav } from '../lib/nav.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  routes: Nav[];
+  constructor(
+    private navService: NavService
+  ) { }
 
   ngOnInit() {
+    this.routes = this.navService.routes;
   }
 
 }
