@@ -37,6 +37,10 @@ export class RequestsService {
         });
     }
 
+    getArticle(params: { id: number } ) {
+        return this.http.get<Articles>(`${articlesRoute}/${params.id}`);
+    }
+
     generateFilter(vars: ReqParams) {
         let query = '';
         
