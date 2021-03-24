@@ -19,6 +19,7 @@ import { CardComponent } from './articles/card/card.component';
 import { TruncatePipe } from './lib/pipes/truncate.pipe';
 import { NewsletterComponent } from './lib/newsletter/newsletter.component';
 import { CookieService } from 'ngx-cookie-service';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 // NGX BOOTS
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -55,6 +56,7 @@ import { FavsComponent } from './articles/favs/favs.component';
     HttpClientModule,
     ReactiveFormsModule,
     MatIconModule,
+    InfiniteScrollModule,
     AlertModule.forRoot()
   ],
   providers: [
