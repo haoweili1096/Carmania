@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './header/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselComponent } from './home/carousel/carousel.component';
 
 // NGX BOOTS
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -30,7 +31,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     ArticleComponent,
     FooterComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
